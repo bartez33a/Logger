@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -105,6 +108,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,11 +132,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\dateTimeUtils.h" />
+    <ClInclude Include="include\FileSink.h" />
+    <ClInclude Include="include\LogEntry.h" />
     <ClInclude Include="include\Logger.h" />
+    <ClInclude Include="include\LoggerWorker.h" />
+    <ClInclude Include="include\Sink.h" />
+    <ClInclude Include="include\SinkConfig.h" />
+    <ClInclude Include="include\SinkFactory.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="mian.cpp" />
     <ClCompile Include="src\dateTimeUtils.cpp" />
+    <ClCompile Include="src\FileSink.cpp" />
+    <ClCompile Include="src\LogEntry.cpp" />
     <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\LoggerWorker.cpp" />
+    <ClCompile Include="src\SinkFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Description.txt" />

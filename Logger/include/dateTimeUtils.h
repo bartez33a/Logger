@@ -15,6 +15,6 @@ namespace dateTimeUtils
 		HHMM
 	};
 
-	std::string getCurrentDate(DateFormat format);
-	std::string getCurrentTime(TimeFormat format);
+	std::string getCurrentDate(const DateFormat format);
+	std::string getCurrentTime(const TimeFormat format);
 }
