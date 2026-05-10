@@ -8,5 +8,5 @@ LogEntry::LogEntry(const std::string& dateString, const std::string& timeString,
 
 LogEntry::operator std::string()
 {
-	return m_date + " " + m_time + " " + m_level + " " + m_message;
+	return m_date + " " + m_time + " <" + m_level + "> " + m_message;
 }
